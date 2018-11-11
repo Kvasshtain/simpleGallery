@@ -22,7 +22,7 @@
     background-repeat: repeat;
 }
 
-#timeCounter {
+.timeCounter {
     position: absolute;
     color: lightgray;
     font: bold italic 700% serif;
@@ -43,19 +43,19 @@
     border-radius: 50px;
 }
 
-#back {
+.back {
     transform: translate(-100%, -100%);
 }
 
-#next {
+.next {
     transform: translate(-150%, -40%);
 }
 
-#pause {
+.pause {
     transform: translate(-170%, -10%);
 }
 
-#run {
+.run {
     transform: translate(-180%, 0);
 }
 

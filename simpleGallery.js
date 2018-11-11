@@ -1,8 +1,12 @@
 ﻿function pageRoutine() {
 
-    var countString = document.getElementById("timeCounter"),
+    var countString = document.getElementsByClassName("timeCounter")[0],
         modalWindow = document.getElementsByClassName("modalWindow")[0],
         coverDiv = document.getElementsByClassName('cover-div')[0],
+        run = document.getElementsByClassName('run')[0],
+        back = document.getElementsByClassName('back')[0],
+        next = document.getElementsByClassName('next')[0],
+        pause = document.getElementsByClassName('pause')[0],
         numRegexp = /(\d+)(\.html)/,
         urlPart = document.location.href.split(numRegexp),
         currentPageNum = + urlPart[1],
@@ -13,12 +17,12 @@
         previousPage = urlPart[0] + previousPageNum + urlPart[2],
         numOfPage = 4,
         timeRun = true,
-        counter = 10,
+        counter = 5,
         ok = 'ok',
         cancel = 'cancel';
 
-    if (document.location.href.indexOf('startPage') + 1) {
-        window.open(document.location.href.replace(/startPage/g,"SIMPLE GALLERY1"), '_gallery');
+    if (document.location.href.indexOf('index') + 1) {
+        document.location.replace("page1.html");
         return;
     }
 
@@ -52,15 +56,6 @@
 
         coverDiv.style.zIndex = 9000;
         modalWindow.style.opacity = 1;
-
-        // if(confirm("Продолжить?")) {
-        //     document.location.replace(firsPage);
-        //     return;
-        // }
-        // else{
-        //     self.close();
-        //     return;
-        // }
     }
 
     if (modalWindow){
@@ -99,8 +94,8 @@
     };
     
     return;
-}
+};
 
 window.onload = function () {
     pageRoutine();
-}
+};
