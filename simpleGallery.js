@@ -1,12 +1,12 @@
 ﻿function pageRoutine() {
 
-    var countString = document.getElementsByClassName("timeCounter")[0],
-        modalWindow = document.getElementsByClassName("modalWindow")[0],
-        coverDiv = document.getElementsByClassName('cover-div')[0],
-        run = document.getElementsByClassName('run')[0],
-        back = document.getElementsByClassName('back')[0],
-        next = document.getElementsByClassName('next')[0],
-        pause = document.getElementsByClassName('pause')[0],
+    var countString = document.getElementById("timeCounter"),
+        modalWindow = document.getElementById("modalWindow"),
+        coverDiv = document.getElementById('cover-div'),
+        run = document.getElementById('run'),
+        back = document.getElementById('back'),
+        next = document.getElementById('next'),
+        pause = document.getElementById('pause'),
         numRegexp = /(\d+)(\.html)/,
         urlPart = document.location.href.split(numRegexp),
         currentPageNum = + urlPart[1],
@@ -61,7 +61,7 @@
     if (modalWindow){
         modalWindow.onclick = function(event) {
             var button = event.srcElement.classList[0],
-                coverDiv = document.getElementsByClassName('cover-div')[0];
+                coverDiv = document.getElementById('cover-div');
 
             if(button === ok) {
                 document.location.replace(firsPage);
